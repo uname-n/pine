@@ -13,6 +13,12 @@ struct Vector {
     data: Array1<f32>,
 }
 
+impl Vector {
+    fn size(&self) -> usize {
+        self.data.len()
+    }
+}
+
 #[derive(Debug)]
 struct Pine {
     path:PathBuf,
@@ -116,6 +122,7 @@ fn main() {
     println!("vector: {:?}", vector);
     println!("vector.id: {:?}", vector.id);
     println!("vector.data: {:?}", vector.data);
+    println!("vector.size: {:?}", vector.size());
 
     pine.save(&vector);
 
