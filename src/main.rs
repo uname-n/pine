@@ -25,7 +25,6 @@ struct Pine {
 }
 
 impl Pine {
-    
     fn new(path:PathBuf) -> Pine {
         create_dir_all(&path).expect("failed to create directory");
         Pine { path }
@@ -107,7 +106,6 @@ impl Pine {
 
         nearest_vector
     }
-
 }
 
 fn main() {
