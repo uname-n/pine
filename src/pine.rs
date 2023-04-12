@@ -9,8 +9,8 @@ use bincode::{deserialize, serialize};
 
 #[derive(Debug)]
 pub struct Pine {
-    path: PathBuf,
-    chunk_similarity: f32,
+    pub path: PathBuf,
+    pub chunk_similarity: f32,
 }
 
 impl Pine {
@@ -132,7 +132,7 @@ impl Pine {
             if path.is_dir() {
                 for entry in read_dir(path)? {
                     let path = entry?.path();
-                    if path.is_file() {
+                    if path.is_file() && !path.ends_with("metadata") {
                         size += 1;
                     }
                 }
